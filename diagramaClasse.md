@@ -53,4 +53,9 @@ classDiagram
     %% Herança / Generalização
     Pessoa <|-- Aluno : herda de
     Pessoa <|-- Professor : herda de
+
+    %% Agregação e Associação do Domínio Acadêmico
+    Turma "1" o-- "1..*" Aluno : agrega
+    Matricula "*" --> "1" Aluno : pertence a
+    Matricula "1" --> "1" Desconto : aplica
 ```
