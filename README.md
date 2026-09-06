@@ -1,3 +1,8 @@
+# SIGA — Atividade de Refatoração SOLID (código inicial)
+**Técnicas de Programação II (TP2) · Aula 4** — CST em Desenvolvimento de Software Multiplataforma · Fatec de Porto Ferreira
+
+## 1. Diagrama de Classes do Domínio
+
 ```mermaid
 classDiagram
     direction TB
@@ -87,6 +92,22 @@ classDiagram
     Desconto <|.. DescontoConvenio : realiza
     Desconto <|.. DescontoFuncionario : realiza
     Desconto <|.. SemDesconto : realiza
+```
+## 2. Diagrama de Sequência: Cálculo da Mensalidade
 
-    
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Aluno
+    participant Matricula
+    participant Desconto
+
+    Cliente ->> Matricula: calcularMensalidade()
+    activate Matricula
+    Matricula ->> Desconto: calcular(valorBase)
+    activate Desconto
+    Desconto -->> Matricula: valorComDesconto
+    deactivate Desconto
+    Matricula -->> Cliente: valorFinal
+    deactivate Matricula
 ```
