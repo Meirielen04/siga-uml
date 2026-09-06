@@ -30,29 +30,10 @@ classDiagram
         +apresentar() String
     }
 
-    class Disciplina {
-        -String codigo
-        -String nome
-        -int cargaHoraria
-        +Disciplina(String codigo, String nome, int cargaHoraria)
-        +getCodigo() String
-        +setCodigo(String codigo) void
-        +getNome() String
-        +setNome(String nome) void
-        +getCargaHoraria() int
-        +setCargaHoraria(int cargaHoraria) void
-    }
-
     class Turma {
         -String codigo
-        -Disciplina disciplina
         -List~Aluno~ alunos
-        +Turma(String codigo, Disciplina disciplina)
-        +getCodigo() String
-        +getDisciplina() Disciplina
-        +getAlunos() List~Aluno~
         +adicionar(Aluno aluno) void
-        +remover(Aluno aluno) void
     }
 
     class Matricula {
@@ -67,4 +48,9 @@ classDiagram
         +setDesconto(Desconto desconto) void
         +getAluno() Aluno
     }
+
+    %% Relacionamentos
+    %% Herança / Generalização
+    Pessoa <|-- Aluno : herda de
+    Pessoa <|-- Professor : herda de
 ```
