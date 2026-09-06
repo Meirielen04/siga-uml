@@ -1,4 +1,4 @@
-# SIGA — Atividade de Refatoração SOLID (código inicial)
+# SIGA —  UML Aplicada a Padrões de Projeto
 **Técnicas de Programação II (TP2) · Aula 4** — CST em Desenvolvimento de Software Multiplataforma · Fatec de Porto Ferreira
 
 ## 1. Diagrama de Classes do Domínio
