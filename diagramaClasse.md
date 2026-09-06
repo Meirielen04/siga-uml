@@ -49,6 +49,29 @@ classDiagram
         +getAluno() Aluno
     }
 
+    %% Interface e Estratégias de Desconto
+    class Desconto {
+        <<interface>>
+        +calcular(double valorBase) double
+    }
+
+    class DescontoBolsista {
+        +calcular(double valorBase) double
+    }
+
+    class DescontoConvenio {
+        +calcular(double valorBase) double
+    }
+
+    class DescontoFuncionario {
+        +calcular(double valorBase) double
+    }
+
+    class SemDesconto {
+        +calcular(double valorBase) double
+    }
+
+
     %% Relacionamentos
     %% Herança / Generalização
     Pessoa <|-- Aluno : herda de
@@ -58,4 +81,12 @@ classDiagram
     Turma "1" o-- "1..*" Aluno : agrega
     Matricula "*" --> "1" Aluno : pertence a
     Matricula "1" --> "1" Desconto : aplica
+
+    %% Realizações da Interface Desconto
+    Desconto <|.. DescontoBolsista : realiza
+    Desconto <|.. DescontoConvenio : realiza
+    Desconto <|.. DescontoFuncionario : realiza
+    Desconto <|.. SemDesconto : realiza
+
+    
 ```
